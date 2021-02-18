@@ -18,7 +18,9 @@
             if(m !== null) {
                 var i = parseInt(m[2], 16);
                 var s = String.fromCodePoint(i);
-                
+                // my font does *not* like this one, should find a better way to handle this <_<
+                if(s === "\u{0001fac2}") continue;
+               
                 var n = document.createElement('span');
                 n.classList = e.classList;
                 n.innerText = s;
